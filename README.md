@@ -3,8 +3,6 @@
 
 Author: Sarah Glass for Python 401
 
-Collaborated with Logan Reece and Anthony Sinitsa on the code.
-
 ## Overview
 
 Devise:
