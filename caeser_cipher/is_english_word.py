@@ -1,16 +1,14 @@
-from corpus_loader import word_list, name_list
+from caeser_cipher.corpus_loader import word_list, name_list
+import re
 
-# print(name_list)
-
-
-# sentence: 'The quick brown fox jumped over the lazily sleeping dog'
-def find_word(sentence):
-    for word in sentence.split():
-        if word in word_list:
-            print(f'{word} It is here')
+def count_words(text):
+     # return count of words found in corpus
+    words_to_test = text.split()
+    word_count = 0
+    for test_word in words_to_test:
+        word = re.sub(r'[^A-Za-z]+','', test_word)
+        if word.lower() in word_list or word in name_list:
+            word_count += 1
         else:
-            print(f'{word} Nope,not here')
-
-
-if __name__ == '__main__':
-    find_word('IWT FJXRZ QGDLC UDM YJBETS DKTG IWT APOXAN HATTEXCV SDV')
+            pass
+    return word_count

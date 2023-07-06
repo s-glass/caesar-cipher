@@ -1,5 +1,5 @@
 from caeser_cipher.cipher import encrypt, decrypt, crack
-
+from caeser_cipher.is_english_word import find_word
 
 def test_encrypt_shift_1():
     actual = encrypt("apple", 1)
@@ -50,6 +50,8 @@ def test_crack_phrase():
     phrase = "It was the best of times, it was the worst of times."
     encrypted = encrypt(phrase, 10)
     actual = crack(encrypted)
+    print(f"actual {actual}")
+    print(type(actual))
     expected = phrase
     assert actual == expected
 
